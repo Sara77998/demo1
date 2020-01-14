@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kalkulator</title>
+</head>
+<body>
+   
+     
+     <h2>KALKULATOR</h2>
+     Prvi broj: <input type="text" id="broj1" maxlength="7" value="0.0">
+     <br><br><br>
+     Drugi broj: <input type="text" id="broj2" maxlength="7" value="0.0">
+     <br><br><br>
+     <select id="operacija">
+     <option value="sabiranje">Sabiranje</option>
+     <option value="oduzimanje">Oduzimanje</option>
+     <option value="mnozenje">Mnozenje</option>
+     <option value="deljenje">Deljenje</option>
+     </select> 
+     <input type="button" value="=" onclick="izracunaj();">
+     <br><br><br>
+     Rezultat: <input type="text" id="rezult"><br><br>
+
+     <script>
+         
+         function izracunaj(){
+             var broj1=parseFloat(document.getElementById("broj1").value)
+             var broj2= parseFloat(document.getElementById("broj2").value)
+         
+         
+             var operacija= document.getElementById("operacija").value;
+         
+             if(operacija==="sabiranje"){
+                 document.getElementById("rezult").value=broj1+broj2;
+             }
+             if(operacija==="oduzimanje"){
+                 document.getElementById("rezult").value=broj1-broj2;
+         
+             }
+             if(operacija==="mnozenje"){
+                 document.getElementById("rezult").value=broj1*broj2;
+         
+             }
+             if(operacija==="deljenje"){
+                 if(broj2!=0) 
+                 document.getElementById("rezult").value=broj1/broj2;
+               else {
+                   document.write("Greska, ne moze se deliti nulom!")
+                  
+                 }
+         
+             }
+         
+         }
+         </script>
+     
+     
+</body>
+</html>
